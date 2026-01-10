@@ -65,38 +65,86 @@ function initSmoothScrolling() {
 }
 
 function setCard(releases) {
-    const newCard = document.createElement('div');
-    const gameImageDiv = document.createElement('div');
+    // const newCard = document.createElement('div');
+    // const gameImageDiv = document.createElement('div');
+    // const gameImage = document.createElement('img');
+    // const gameInfoDiv = document.createElement('div');
+    // const gameTitle = document.createElement('h3');
+    // const gameLink = document.createElement('a');
+
+    // newCard.className = "game-card";
+    // gameImageDiv.className = "game-image";
+    // gameImage.className = "game-image";
+    // gameImage.src = releases["background_image"];
+    // gameInfoDiv.className = "game-info";
+    // gameTitle.textContent = releases["name"];
+    // gameLink.href = `downloads#${releases["hashkey"]}`;
+    // gameLink.className = "game-link";
+    // gameLink.textContent = "立即下载";
+
+    // gameImageDiv.appendChild(gameImage);
+    // gameInfoDiv.appendChild(gameTitle);
+    // gameInfoDiv.appendChild(gameLink);
+    // newCard.appendChild(gameImageDiv);
+    // newCard.appendChild(gameInfoDiv);
+
+    const newCard = document.createElement('div'); // 游戏卡片 Div
+    const gameImageDiv = document.createElement('div'); // 游戏图片
     const gameImage = document.createElement('img');
-    const gameInfoDiv = document.createElement('div');
-    const gameTitle = document.createElement('h3');
+    const gameTitle = document.createElement('h3'); // 游戏标题
+    const gameIntro = document.createElement('p'); // 游戏简介
     const gameLink = document.createElement('a');
 
-    newCard.className = "game-card";
-    gameImageDiv.className = "game-image";
-    gameImage.className = "game-image";
-    gameImage.src = releases["background_image"];
-    gameInfoDiv.className = "game-info";
+    newCard.className = "project-card glass-card";
+    newCard.dataset.type = releases["type"];
+    gameImageDiv.className = "card-image-placeholder";
+    gameImage.src = releases["icon"];
+    gameImage.sizes = "100vw";
     gameTitle.textContent = releases["name"];
+    gameIntro.textContent = releases["intro"];
+    gameLink.className = "btn-primary";
     gameLink.href = `downloads#${releases["hashkey"]}`;
-    gameLink.className = "game-link";
-    gameLink.textContent = "立即下载";
+
+    if (releases["version_type"] == "inside") {
+      gameLink.style = "pointer-events: none; color: gray; background: rgba(69, 69, 69, 0.1);";
+      gameLink.textContent = "敬请期待";
+    }
+    else
+    {
+      gameLink.textContent = "立即下载";
+    }
 
     gameImageDiv.appendChild(gameImage);
-    gameInfoDiv.appendChild(gameTitle);
-    gameInfoDiv.appendChild(gameLink);
     newCard.appendChild(gameImageDiv);
-    newCard.appendChild(gameInfoDiv);
+    newCard.appendChild(gameTitle);
+    newCard.appendChild(gameIntro);
+    newCard.appendChild(gameLink);
 
     return newCard;
 }
 
 function updatePage() {
-    const cardGrid = document.getElementById("games-grid");
+    const cardGrid = document.getElementById("projects");
+    let Cards = [];
     for (const release in data) {
-        cardGrid.appendChild(setCard(data[release]));
+        const card = setCard(data[release]);
+        if (data[release]["version_type"] == "inside")
+        {
+          Cards.push(card);
+        }
+        else
+        {
+          Cards.unshift(card);
+        }
+        // cardGrid.appendChild(setCard(data[release]));
         //console.log(`处理版本: ${data[release]}`);
     }
+
+    console.log(Cards);
+
+    Cards.forEach(card => {
+        cardGrid.appendChild(card);
+    });
 }
 
 (async function initializeApp(){
@@ -113,3 +161,61 @@ window.addEventListener('error', function (e) {
     console.error('JavaScript错误:', e.error);
 });
 
+// 主题切换逻辑
+// const themeToggle = document.getElementById('theme-toggle');
+// const body = document.body;
+
+// // 检测系统偏好
+// const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// // 初始化主题
+// function initTheme() {
+//   const saved = localStorage.getItem('devode-theme');
+//   if (saved) {
+//     body.className = `theme-${saved}`;
+//     updateToggleLabel(saved);
+//   } else {
+//     body.className = 'theme-auto';
+//     updateToggleLabel(prefersDark ? '深色' : '浅色');
+//   }
+// }
+
+// function toggleTheme() {
+//   const current = body.className;
+//   let newTheme;
+//   if (current === 'theme-light') {
+//     newTheme = 'dark';
+//   } else if (current === 'theme-dark') {
+//     newTheme = 'auto';
+//   } else {
+//     newTheme = 'light';
+//   }
+//   body.className = `theme-${newTheme}`;
+//   localStorage.setItem('devode-theme', newTheme);
+//   updateToggleLabel(newTheme === 'auto' ? (prefersDark ? '深色' : '浅色') : newTheme);
+// }
+
+// function updateToggleLabel(label) {
+//   themeToggle.setAttribute('aria-label', label === '深色' ? '浅色' : label === '浅色' ? '自动' : '深色');
+//   themeToggle.textContent = label === '深色' ? '🌙' : label === '浅色' ? '☀️' : '🌓';
+// }
+
+// 作品筛选
+document.querySelectorAll('.filter-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const type = btn.dataset.type;
+    document.querySelectorAll('.filter-tabs button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.project-card').forEach(card => {
+      if (type === 'all' || card.dataset.type === type) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// // 初始化
+// initTheme();
+// themeToggle.addEventListener('click', toggleTheme);

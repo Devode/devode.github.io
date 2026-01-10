@@ -1,12 +1,42 @@
 [
     {
         "name": "方块跑酷",
+        "type": "game",
         "version": "1.0.4-beta-2",
-        "icon": "https://gitee.com/devode/blocky-parkour-release/raw/master/icon.png",
+        "version_type": "beta",
+        "icon": "img/icons/方块跑酷_icon.png",
         "background_image": "./img/方块跑酷.jpg",
         "platforms": [
             "Android"
         ],
+        "intro": "一款简单的平台跳跃游戏",
         "hashkey": "BlockyParkour"
+    },
+    {
+        "name": "方块跑酷 2.0",
+        "type": "game",
+        "version": "2.0.0-inside",
+        "version_type": "inside",
+        "icon": "img/icons/方块跑酷2.0_icon.png",
+        "background_image": "./img/方块跑酷.jpg",
+        "platforms": [
+            "Android",
+            "Windows"
+        ],
+        "intro": "方块跑酷的第2代，重做了99%的内容，并且添加了一些新的内容。",
+        "hashkey": "null"
+    },
+    {
+        "name": "教学电子课本",
+        "type": "app",
+        "version": "1.0.0-alpha",
+        "version_type": "alpha",
+        "icon": "img/icons/教学电子课本_icon.png",
+        "background_image": "",
+        "platforms": [
+            "Windows"
+        ],
+        "intro": "专为教学场景设计的电子课本显示器（本应用不提供课本文件）",
+        "hashkey": "TeachBookDisplay"
     }
 ]

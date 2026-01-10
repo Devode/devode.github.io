@@ -1,109 +1,99 @@
-<!-- <!DOCTYPE html>
-<html lang="cn">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Devode 网站</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js" defer></script>
-    </head>
-    <hody>
-        <h1>欢迎来到 Devode 网站</h1>
-        <p>这是一个示例网页。</p>
-
-    </hody>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devode Games - 分享创意与乐趣</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main_script.js"></script>
-    <style>
-        .a-unset {
-            all: unset;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Devode — Apps & Games</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="64x64" href="img/icon.png">
+  <!-- 加载 JetBrains Mono 字体（英文） -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <link href="css/harmonyos-sans.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+
+
 </head>
+<body class="theme-auto">
 
-<body>
-    <!-- 导航栏 -->
-    <header>
-        <div class="container">
-            <nav>
-                <a class="a-unset" href="./">
-                    <div class="logo">Devode Games</div>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#home">首页</a></li>
-                    <li><a href="#games">Devode 游戏</a></li>
-                    <!-- <li><a href="#about">关于我</a></li> -->
-                    <!--<li><a href="#contact">联系我</a></li> -->
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- 英雄区域 -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>创造与分享游戏的乐趣</h1>
-            <p>欢迎访问本网站，你可以在这里下载我们制作的所有游戏</p>
-        </div>
+  <header class="glass-nav">
+    <div class="container">
+      <a href="./" class="logo">Devode</a>
+      <nav>
+        <a href="#home">首页</a>
+        <a href="#projects">作品</a>
+        <!-- <a href="#about">关于</a> -->
+      </nav>
+      <div class="header-actions">
+        <!-- <a href="https://github.com/yourname" target="_blank" rel="noopener">
+          <img src="img/github.svg" />
+        </a> -->
+      </div>
+    </div>
+      
+    <!-- 主题切换按钮
+    <button id="theme-toggle" aria-label="切换主题">🌓</button> -->
+  </header>
+
+  <main>
+    <!-- Hero 区 -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <h1>
+          <code class="language-html">
+            &lt;text&gt;Devode&lt;/text&gt;
+          </code>
+        </h1>
+        <p>游戏与应用</p>
+      </div>
     </section>
 
-    <!-- 游戏展示区 -->
-    <section class="games-section container" id="games">
-        <h2 class="section-title">Devode 游戏</h2>
-        <div class="games-grid-container">
-            <div class="games-grid" id="games-grid">
-                <!-- 游戏卡片1 -->
-                <!--<div class="game-card">
-                    <div class="game-image">
-                        <img class="game-image" src="img/方块跑酷.jpg" />
-                    </div>
-                    <div class="game-info">
-                        <h3>方块跑酷</h3>
-                        <p>一款经典的平台跳跃游戏，控制小方块收集星星并到达终点。</p>
-                        <a href="downloads/download_blockyParkour.html" class="game-link">立即下载</a>
-                        <a href="downloads#BlockyParkour" class="game-link">立即下载</a>
-                    </div>-->
-                </div>
-            </div>
+    <!-- 作品分类标签 -->
+    <div class="container">
+      <div class="filter-tabs">
+        <button data-type="all" class="active">全部</button>
+        <button data-type="game">游戏</button>
+        <button data-type="app">应用</button>
+      </div>
+
+      <!-- 作品网格 -->
+      <div id="projects" class="projects-grid">
+        <!-- 示例作品 1：游戏
+        <div class="project-card glass-card" data-type="game">
+          <div class="card-image-placeholder">🎮</div>
+          <h3>Pixel Quest</h3>
+          <p>一款复古像素风冒险游戏，融合解谜与平台跳跃。</p>
+          <a href="#" class="btn-primary">试玩</a>
         </div>
-    </section>
 
+        示例作品 2：应用
+        <div class="project-card glass-card" data-type="app">
+          <div class="card-image-placeholder">📱</div>
+          <h3>QuickNote</h3>
+          <p>极简笔记工具，支持 Markdown 与云同步。</p>
+          <a href="#" class="btn-primary">下载</a>
+        </div> -->
+      </div>
+    </div>
+  </main>
 
-    <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Devode. 保留所有权利.</p>
-                <ul class="social-links">
-                    <li>
-                        <a href="https://github.com/Devode" target="_blank" rel="noopener" title="GitHub">
-                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385 0.6 0.113 0.82-0.258 0.82-0.577 0-0.285-0.01-1.04-0.015-2.04-3.338 0.724-4.042-1.61-4.042-1.61-0.546-1.385-1.335-1.755-1.335-1.755-1.087-0.745 0.085-0.729 0.085-0.729 1.205 0.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495 0.998 0.108-0.776 0.417-1.305 0.76-1.605-2.665-0.3-5.466-1.332-5.466-5.93 0-1.31 0.465-2.38 1.235-3.22-0.135-0.303-0.54-1.523 0.105-3.176 0 0 1.005-0.322 3.3 1.23 0.96-0.267 1.98-0.399 3-0.405 1.02 0.006 2.04 0.138 3 0.405 2.28-1.552 3.285-1.23 3.285-1.23 0.645 1.653 0.24 2.873 0.12 3.176 0.765 0.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92 0.42 0.36 0.81 1.096 0.81 2.22 0 1.606-0.015 2.896-0.015 3.286 0 0.315 0.21 0.69 0.825 0.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://gitee.com/devode" target="_blank" title="Gitee">
-                            <img class="social-icon" src="img/gitee.svg" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 Devode. 保留所有权利</p>
+      <div class="footer-links">
+        <a href="https://github.com/Devode" target="_blank" rel="noopener">
+          <img src="img/github.svg" height="32"/>
+        </a>
+        <a href="https://gitee.com/devode" target="_blank" rel="noopener">
+          <img src="img/gitee.svg" height="32"/>
+        </a>
+      </div>
+    </div>
+  </footer>
 
-
+  <script src="js/main_script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
-
 </html>

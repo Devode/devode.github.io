@@ -1,0 +1,18 @@
+/* harmonyos-sans.css */
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  src: url('fonts/HarmonyOS_SansSC_Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  src: url('./fonts/HarmonyOS_SansSC_Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: 'HarmonyOS Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+}

@@ -67,7 +67,7 @@ function setCard(platform) {
 
 function updatePage() {
   const platforms = Object.keys(data[hashkey]["platforms"]);
-  document.title = `Devode Games - 下载 ${data[hashkey]["name"]}`//"Devode Games - 下载" + data[hashkey]["name"];
+  document.title = `Devode - 下载 ${data[hashkey]["name"]}`//"Devode Games - 下载" + data[hashkey]["name"];
   document.getElementById("downloads-section-title").innerText = `下载 ${data[hashkey]["name"]}`; //"下载" + data[hashkey]["name"];
   const cardGrid = document.getElementById("downloads-grid");
   
