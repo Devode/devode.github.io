@@ -29,12 +29,13 @@
     {
         "name": "教学电子课本",
         "type": "app",
-        "version": "1.0.0-alpha",
+        "version": "1.0.0-alpha-2",
         "version_type": "alpha",
         "icon": "img/icons/教学电子课本_icon.png",
         "background_image": "",
         "platforms": [
-            "Windows"
+            "Windows",
+            "Android"
         ],
         "intro": "专为教学场景设计的电子课本显示器（本应用不提供课本文件）",
         "hashkey": "TeachBookDisplay"
