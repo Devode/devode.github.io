@@ -8,16 +8,16 @@
             }
         }
     },
-    "TeachBookDisplay": {
-        "name": "教学电子课本",
+    "LiteView": {
+        "name": "轻阅屏",
         "platforms": {
             "Windows": {
                 "bits": "x64",
-                "url": "https://gitee.com/devode/teaching-electronic-textbooks/releases/download/1.0.0-alpha-2/%E6%95%99%E5%AD%A6%E7%94%B5%E5%AD%90%E8%AF%BE%E6%9C%AC%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F.exe"
+                "url": "https://gitee.com/devode/lite_view/releases/download/1.0.0-beta-1/%E8%BD%BB%E9%98%85%E5%B1%8F%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F_x64_v1.0.0-beta-1.exe"
             },
             "Android": {
                 "bits": "arm64",
-                "url": "https://gitee.com/devode/teaching-electronic-textbooks/releases/download/1.0.0-alpha-2/%E6%95%99%E5%AD%A6%E7%94%B5%E5%AD%90%E8%AF%BE%E6%9C%AC.apk"
+                "url": "https://gitee.com/devode/lite_view/releases/download/1.0.0-beta-1/%E8%BD%BB%E9%98%85%E5%B1%8F_arm64_v1.0.0-beta-1.apk"
             }
         }
     }
